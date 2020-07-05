@@ -10,12 +10,12 @@ pipeline {
                 sh 'pylint  \${WORKSPACE}/simple_api/student_age.py'
             }
         }*/
-        stage('Check docker-compose syntax') {
+        /*stage('Check docker-compose syntax') {
             agent { docker { image 'docker/compose' } }
             steps {
                 sh 'docker-compose -f \${WORKSPACE}/docker-compose.yml config'
             }
-        }
+        }*/
         stage('Check bash syntax') {
             agent { docker { image 'koalaman/shellcheck-alpine:stable' } }
             steps {
